@@ -4,7 +4,7 @@ export default {
         return [
             {
                 source: '/api/:path*',
-                destination: 'http://localhost:5000/api/:path*'
+                destination: 'http://localhost:3000/api/:path*'
             }
         ];
     }

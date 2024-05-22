@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Sidebar from "@/components/my-ui/Sidebar";  // Importez le composant Navbar
 import { Layout } from "lucide-react";
 
@@ -20,7 +20,6 @@ export default function RootLayout({
     <>
       <html lang="en" className="dark">
         <body className={inter.className}>
-          <Sidebar />
           {children}
         </body>
       </html>

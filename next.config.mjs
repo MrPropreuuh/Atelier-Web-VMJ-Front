@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+<<<<<<< Updated upstream
 export default {
     async rewrites() {
         return [
@@ -9,3 +10,8 @@ export default {
         ];
     }
 };
+=======
+const nextConfig = {};
+
+export default nextConfig;
+>>>>>>> Stashed changes

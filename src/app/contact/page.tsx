@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Mail, Phone } from 'lucide-react'; 
 
 // Mise à jour du schéma de validation pour inclure les champs nom, prénom, e-mail et contenu
 const formSchema = z.object({
@@ -69,11 +70,11 @@ export function ProfileForm() {
           <div className="form-container">
             <div className="contact-info mb-4">
               <div className="contact-item">
-                <span role="img" aria-label="email" className="contact-logo">📧</span>
+              <Mail className="contact-logo" aria-label="email" />
                 <p>email@example.com</p>
               </div>
               <div className="contact-item">
-                <span role="img" aria-label="phone" className="contact-logo">📞</span>
+              <Phone className="contact-logo" aria-label="phone" />
                 <p>+1234567890</p>
               </div>
             </div>

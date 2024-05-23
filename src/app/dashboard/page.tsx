@@ -26,21 +26,6 @@ import { Activity, ArrowUpRight, CheckCircle, CreditCard, DollarSign, LineChart,
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const data = [
-    { month: 'Jan', visitors: 4000 },
-    { month: 'Feb', visitors: 3000 },
-    { month: 'Mar', visitors: 2000 },
-    { month: 'Apr', visitors: 2780 },
-    { month: 'May', visitors: 1890 },
-    { month: 'Jun', visitors: 2390 },
-    { month: 'Jul', visitors: 3490 },
-    { month: 'Aug', visitors: 2000 },
-    { month: 'Sep', visitors: 2780 },
-    { month: 'Oct', visitors: 1890 },
-    { month: 'Nov', visitors: 2390 },
-    { month: 'Dec', visitors: 3490 },
-  ];
-
 export default function Home() {
   return (
     <RootLayout>

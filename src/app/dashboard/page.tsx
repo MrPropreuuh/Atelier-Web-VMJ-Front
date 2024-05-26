@@ -4,6 +4,7 @@ import ProductControlCard from '@/components/my-ui/dashboard/ProductControlCard'
 import ClientFeedbackCard from '@/components/my-ui/dashboard/ClientFeedbackCard';
 import ProductPerformanceCard from '@/components/my-ui/dashboard/ProductPerformanceCard';
 import TaskListCard from '@/components/my-ui/dashboard/TaskListCard';
+import Sidebar from '@/components/my-ui/Sidebar';
 
 const DashboardPage: React.FC = () => {
   const breadcrumbItems = [
@@ -12,6 +13,7 @@ const DashboardPage: React.FC = () => {
   ];
   return (
     <RootLayout>
+      <Sidebar />
       <div className="flex flex-row w-full">
         <div className="flex flex-col gap-4 w-full p-8 h-full ml-14">
           <div className="flex">

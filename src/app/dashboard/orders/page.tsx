@@ -7,6 +7,7 @@ import SalesCard from '@/components/my-ui/orders/SalesCard';
 import ActiveUsersCard from '@/components/my-ui/orders/ActiveUsersCard';
 import TransactionsCard from '@/components/my-ui/orders/TransactionsCard';
 import RecentSalesCard from '@/components/my-ui/orders/RecentSalesCard';
+import Sidebar from '@/components/my-ui/Sidebar';
 
 export default function OrderPage() {
   const breadcrumbItems = [
@@ -17,6 +18,7 @@ export default function OrderPage() {
 
   return (
     <RootLayout>
+      <Sidebar />
       <div className="flex flex-row w-full">
         <div className="flex flex-col gap-4 w-full p-8 h-full ml-14">
           <div className="flex">

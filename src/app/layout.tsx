@@ -18,7 +18,7 @@ type LayoutProps = React.PropsWithChildren<{}>;
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" className= "">
       <body className={`${caudex.variable} ${eczar.variable}`}>
         {children}
       </body>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Plus, Minus } from 'lucide-react';
+import ProductControlDrawer from '@/components/my-ui/dashboard/ProductControlDrawer';
 
 const ProductControlCard: React.FC = () => {
     return (
@@ -10,15 +9,14 @@ const ProductControlCard: React.FC = () => {
                 <CardTitle>Controle produit</CardTitle>
             </CardHeader>
             <CardContent>
-                <div className="flex flex-row gap-4">
+                <div className="flex flex-row gap-4 flex-wrap">
                     <Card className="flex flex-col flex-1 justify-between">
                         <CardTitle className="flex p-4 justify-center">
                             Ajout produit
                         </CardTitle>
                         <CardContent>
-                            <Button className="flex flex-row w-full bg-background border border-borders text-foreground hover:text-background">
-                                <Plus />
-                            </Button>
+                            {/* ProductControlDrawer @/components/my-ui-ProductControlDrawer */}
+                            <ProductControlDrawer type="add" />
                         </CardContent>
                     </Card>
                     <Card className="flex flex-col flex-1 justify-between">
@@ -26,9 +24,8 @@ const ProductControlCard: React.FC = () => {
                             Supprimer produit
                         </CardTitle>
                         <CardContent>
-                            <Button className="flex flex-row w-full bg-background border border-borders text-foreground hover:text-background">
-                                <Minus />
-                            </Button>
+                            {/* ProductControlDrawer @/components/my-ui-ProductControlDrawer */}
+                            <ProductControlDrawer type="remove" />
                         </CardContent>
                     </Card>
                 </div>

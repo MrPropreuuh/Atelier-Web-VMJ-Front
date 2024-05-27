@@ -7,7 +7,6 @@ import ClientFeedbackCard from '@/components/my-ui/dashboard/ClientFeedbackCard'
 import ProductPerformanceCard from '@/components/my-ui/dashboard/ProductPerformanceCard';
 import TaskListCard from '@/components/my-ui/dashboard/TaskListCard';
 import Sidebar from '@/components/my-ui/Sidebar';
-import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { Toaster } from '@/components/ui/toaster';
 

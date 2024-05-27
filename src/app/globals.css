@@ -82,7 +82,7 @@
   }
 
   ol {
-    @apply ml-2
+    @apply ml-2;
   }
 
   /* Enlever les spinners */
@@ -96,6 +96,21 @@
     -moz-appearance: textfield;
   }
 
+  /* Styles pour le texte sélectionné */
+  ::selection {
+    background: #F9FAFB;
+    /* Couleur de fond */
+    color: #030812;
+    /* Couleur du texte */
+  }
+
+  ::-moz-selection {
+    background: #F9FAFB;
+    /* Couleur de fond */
+    color: #030712;
+    /* Couleur du texte */
+  }
+
   @media (max-width: 640px) {
     .responsive-badge {
       display: flex;
@@ -107,7 +122,4 @@
       /* Fully rounded */
     }
   }
-
-
-
 }

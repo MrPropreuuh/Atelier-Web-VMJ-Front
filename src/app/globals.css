@@ -85,7 +85,6 @@
     @apply ml-2
   }
 
-<<<<<<< HEAD
   /* Enlever les spinners */
   input[type='number']::-webkit-outer-spin-button,
   input[type='number']::-webkit-inner-spin-button {
@@ -112,6 +111,3 @@
 
 
 }
-=======
-}
->>>>>>> develop

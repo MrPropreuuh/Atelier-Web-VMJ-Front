@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import { Home, Package2, Settings, ShoppingCart } from 'lucide-react';
 import { Tooltip, TooltipProvider, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import Link from 'next/link';
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 
 const Sidebar: React.FC = () => {
   const pathname = usePathname();
@@ -15,7 +16,10 @@ const Sidebar: React.FC = () => {
           href="/"
           className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
         >
-          <Package2 className="h-4 w-4 transition-all group-hover:scale-110" />
+          <Avatar>
+            <AvatarImage src="/dashb_logo_artelier.png" />
+            <AvatarFallback>AT</AvatarFallback>
+          </Avatar>
           <span className="sr-only">Artelier</span>
         </Link>
 

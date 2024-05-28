@@ -1,113 +1,145 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import { ArtworkList } from "../components/home/ArtworkList"; // Adjust the path as needed
+import ArtSection from "@/components/home/ArtSection";
+import ArtGallery from "@/components/home/ArtGallery";
+import { useState } from "react";
+import ArtistSection from "@/components/home/ArtistSection";
+
+const HomePage: React.FC = () => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const handleOpenDrawer = () => setIsDrawerOpen(true);
+  const handleCloseDrawer = () => setIsDrawerOpen(false);
+  const handleSubmit = () => {
+    // Define your submit logic here
+  };
+
+  const artworks = [
+    {
+      title: 'Surreal Harmony',
+      description: "Cette peinture vibrante et surréaliste représente une figure abstraite ornée d'une pléthore de couleurs et de motifs. La figure centrale a un œil énorme et un visage fantaisiste, caractérisé par des pois et des rayures. La combinaison de couleurs vives telles que le rose, le jaune et le bleu, ainsi que les formes excentriques, évoquent un sentiment d'absurdité ludique. La tenue vestimentaire du personnage comprend un grand nœud papillon rayé, ce qui ajoute à la nature fantaisiste de l'œuvre d'art.",
+      price: 4500,
+      imageUrl: '/tableau1.jpeg',
+      artist: 'René Liesse',
+      onSubmit: handleSubmit,
+    },
+    {
+      title: 'Ethereal Ehcoes',
+      description: "Ce tableau d'une beauté envoûtante représente trois figures fantomatiques émergeant d'un fond bleu riche et profond. Les personnages, rendus dans un mélange de blanc et de tons sourds, semblent avancer avec un sentiment de détermination et d'unité. Les coups de pinceau expressifs et le contraste dramatique entre la lumière et l'obscurité créent une atmosphère éthérée et presque spectrale, qui capte l'imagination du spectateur.",
+      price: 3800,
+      imageUrl: '/tableau4.jpg',
+      artist: 'Aiden Abstract',
+      onSubmit: handleSubmit,
+    },
+    {
+      title: 'Fragmented Reality',
+      description: "Dans cette œuvre abstraite, diverses formes géométriques sont empilées, créant une structure à la fois chaotique et harmonieuse. L'utilisation de rouges, de verts et de bleus audacieux sur un fond brun atténué donne l'impression d'une réalité dynamique et fragmentée. La texture et la profondeur obtenues par les coups de pinceau ajoutent une qualité tangible aux formes abstraites, ce qui en fait une œuvre intrigante à méditer.",
+      price: 3700,
+      imageUrl: '/tableau3.jpg',
+      artist: 'Fleeting Faces',
+      onSubmit: handleSubmit,
+    },
+
+  ];
+
+  const artworks2 = [
+    {
+      title: 'Fleeting Faces',
+      description: "Cette peinture évocatrice représente un visage partiellement obscurci par des coups de pinceau tourbillonnants et fragmentés...",
+      price: 2700,
+      imageUrl: '/tableau2.jpg',
+      artist: 'Fleeting Faces',
+      onSubmit: handleSubmit,
+    },
+    {
+      title: 'Celestial Whispers',
+      description: "Portrait envoûtant baigné de nuances de bleu, ce tableau présente un visage qui semble se dissoudre dans les tourbillons qui l'entourent...",
+      price: 5200,
+      imageUrl: '/tableau5.jpg',
+      artist: 'Ophelia Serene',
+      onSubmit: handleSubmit,
+    },
+    {
+      title: 'Radiant Reverie',
+      description: "Ce tableau représente le profil serein d'une jeune femme éclairée par une douce lumière dorée...",
+      price: 6000,
+      imageUrl: '/tableau6.jpg',
+      artist: 'Juliette Lumineuse',
+      onSubmit: handleSubmit,
+    },
+    {
+      title: 'Chromatic Contemplation',
+      description: "Ce portrait abstrait présente des coups de pinceau audacieux et expressifs dans une émeute de couleurs...",
+      price: 3500,
+      imageUrl: '/tableau7.jpg',
+      artist: 'Marcel Vibrant',
+      onSubmit: handleSubmit,
+    },
+    {
+      title: 'Feast of the Abyss',
+      description: "Une nature morte saisissante qui combine des éléments macabres et banals...",
+      price: 4200,
+      imageUrl: '/tableau8.jpg',
+      artist: 'Beatrice Noir',
+      onSubmit: handleSubmit,
+    },
+    {
+      title: 'Inferno',
+      description: "Composition abstraite dominée par des rouges et des noirs ardents, cette peinture évoque un sentiment de chaos et d'intensité...",
+      price: 3800,
+      imageUrl: '/tableau9.jpg',
+      artist: 'Dante Fiery',
+      onSubmit: handleSubmit,
+    },
+    {
+      title: 'Mystic Dance',
+      description: "Cette peinture présente une scène surréaliste, presque onirique, avec des personnages qui semblent danser ou s'adonner à des mouvements rituels...",
+      price: 3200,
+      imageUrl: '/tableau10.jpg',
+      artist: 'Lucien Twilight',
+      onSubmit: handleSubmit,
+    },
+    {
+      title: 'The Odd Quartet',
+      description: "Cette peinture fantaisiste et surréaliste met en scène quatre personnages aux traits exagérés et aux motifs vibrants...",
+      price: 4500,
+      imageUrl: '/tableau11.jpeg',
+      artist: 'Kenji Whimsy',
+      onSubmit: handleSubmit,
+    },
+    {
+      title: 'Whispers of Spring',
+      description: "Une peinture sereine et délicate qui capture l'essence du printemps...",
+      price: 5000,
+      imageUrl: '/tableau12.png',
+      artist: 'Celeste Harmony',
+      onSubmit: handleSubmit,
+    },
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <section className="relative h-[80vh] w-full overflow-hidden">
+        <img alt="mettre giga background bien bg pour donner envie" className="h-full w-full object-cover" height={1080} src="/bgbgbg.png" style={{ aspectRatio: "1920/1080", objectFit: "cover" }} width={1920} />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#00010e] to-transparent" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-4 text-center sm:gap-8 sm:px-6 lg:gap-10">
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">L'Artelier, S’offrir de l’art devient simple</h1>
+          <p className="max-w-xl text-lg text-gray-200 sm:text-xl">Plus de 30 000 œuvres de tous styles</p>
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      </section>
+      <section className="py-12 sm:py-16 lg:py-20">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* ArtworkList @/components/home/ArtworkList */}
+          <ArtworkList artworks={artworks} />
+        </div>
+      </section>
+      {/* ArtSection @/components/home/ArtSection */}
+      <ArtSection />
+      <ArtGallery artworks={artworks2} />
+      <ArtistSection />
+    </div>
   );
-}
+};
+
+export default HomePage;

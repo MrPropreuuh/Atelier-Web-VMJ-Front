@@ -20,6 +20,8 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs";
 import axios from 'axios';
+import Navbar from '@/components/home/NavbarHome';
+import { Footer } from '@/components/home/FooterHome';
 
 export function TabsDemo() {
   const [loginEmail, setLoginEmail] = useState('');
@@ -67,65 +69,70 @@ export function TabsDemo() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen w-full">
-      <div className="w-[500px]">
-        <Tabs defaultValue="account" className="border rounded-lg shadow-lg">
-          <TabsList className="grid w-full grid-cols-2 border-b">
-            <TabsTrigger value="account">Connexion</TabsTrigger>
-            <TabsTrigger value="password">Inscription</TabsTrigger>
-          </TabsList>
-          <TabsContent value="account">
-            <Card>
-              <CardHeader>
-                <CardTitle>Connexion</CardTitle>
-                <CardDescription>
-                  Connectez-vous ci-dessous :
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="space-y-1">
-                  <Label htmlFor="loginEmail">Adresse e-mail</Label>
-                  <Input id="loginEmail" value={loginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="loginPassword">Mot de passe</Label>
-                  <Input id="loginPassword" type="password" value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)} />
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button onClick={handleLogin}>Connexion</Button>
-              </CardFooter>
-            </Card>
-          </TabsContent>
-          <TabsContent value="password">
-            <Card>
-              <CardHeader>
-                <CardTitle>Inscription</CardTitle>
-                <CardDescription>
-                  Inscrivez-vous ci-dessous :
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="space-y-1">
-                  <Label htmlFor="registerEmail">Adresse e-mail</Label>
-                  <Input id="registerEmail" value={registerEmail} onChange={(e) => setRegisterEmail(e.target.value)} />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="registerUsername">Pseudo</Label>
-                  <Input id="registerUsername" value={registerUsername} onChange={(e) => setRegisterUsername(e.target.value)} />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="registerPassword">Mot de passe</Label>
-                  <Input id="registerPassword" type="password" value={registerPassword} onChange={(e) => setRegisterPassword(e.target.value)} />
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button onClick={handleRegister}>Inscription</Button>
-              </CardFooter>
-            </Card>
-          </TabsContent>
-        </Tabs>
+    <div className='flex flex-col min-h-screen justify-between'>
+
+      <div className="flex items-center justify-center w-full flex-col m-auto">
+        <div className="w-[500px]">
+          <Tabs defaultValue="account" className="border rounded-lg shadow-lg">
+            <TabsList className="grid w-full grid-cols-2 border-b">
+              <TabsTrigger value="account">Connexion</TabsTrigger>
+              <TabsTrigger value="password">Inscription</TabsTrigger>
+            </TabsList>
+            <TabsContent value="account">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Connexion</CardTitle>
+                  <CardDescription>
+                    Connectez-vous ci-dessous :
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-2">
+                  <div className="space-y-1">
+                    <Label htmlFor="loginEmail">Adresse e-mail</Label>
+                    <Input id="loginEmail" value={loginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="loginPassword">Mot de passe</Label>
+                    <Input id="loginPassword" type="password" value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)} />
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button onClick={handleLogin}>Connexion</Button>
+                </CardFooter>
+              </Card>
+            </TabsContent>
+            <TabsContent value="password">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Inscription</CardTitle>
+                  <CardDescription>
+                    Inscrivez-vous ci-dessous :
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-2">
+                  <div className="space-y-1">
+                    <Label htmlFor="registerEmail">Adresse e-mail</Label>
+                    <Input id="registerEmail" value={registerEmail} onChange={(e) => setRegisterEmail(e.target.value)} />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="registerUsername">Pseudo</Label>
+                    <Input id="registerUsername" value={registerUsername} onChange={(e) => setRegisterUsername(e.target.value)} />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="registerPassword">Mot de passe</Label>
+                    <Input id="registerPassword" type="password" value={registerPassword} onChange={(e) => setRegisterPassword(e.target.value)} />
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button onClick={handleRegister}>Inscription</Button>
+                </CardFooter>
+              </Card>
+            </TabsContent>
+          </Tabs>
+        </div>
+
       </div>
+      <Footer />
     </div>
   );
 }

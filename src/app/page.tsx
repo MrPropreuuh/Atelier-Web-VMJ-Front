@@ -1,10 +1,12 @@
 'use client';
 
-import { ArtworkList } from "../components/home/ArtworkList"; // Adjust the path as needed
+import { ArtworkList } from "../components/home/ArtworkList";
 import ArtSection from "@/components/home/ArtSection";
 import ArtGallery from "@/components/home/ArtGallery";
 import { useState } from "react";
 import ArtistSection from "@/components/home/ArtistSection";
+import Navbar from "@/components/home/NavbarHome";
+import { Footer } from "@/components/home/FooterHome";
 
 const HomePage: React.FC = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -40,7 +42,6 @@ const HomePage: React.FC = () => {
       artist: 'Fleeting Faces',
       onSubmit: handleSubmit,
     },
-
   ];
 
   const artworks2 = [
@@ -119,7 +120,9 @@ const HomePage: React.FC = () => {
   ];
 
   return (
+
     <div>
+      <Navbar />
       <section className="relative h-[80vh] w-full overflow-hidden">
         <img alt="mettre giga background bien bg pour donner envie" className="h-full w-full object-cover" height={1080} src="/bgbgbg.png" style={{ aspectRatio: "1920/1080", objectFit: "cover" }} width={1920} />
         <div className="absolute inset-0 bg-gradient-to-t from-[#00010e] to-transparent" />
@@ -130,14 +133,13 @@ const HomePage: React.FC = () => {
       </section>
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* ArtworkList @/components/home/ArtworkList */}
           <ArtworkList artworks={artworks} />
         </div>
       </section>
-      {/* ArtSection @/components/home/ArtSection */}
       <ArtSection />
       <ArtGallery artworks={artworks2} />
       <ArtistSection />
+      <Footer />
     </div>
   );
 };

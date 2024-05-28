@@ -82,7 +82,7 @@
   }
 
   ol {
-    @apply ml-2
+    @apply ml-2;
   }
 
   /* Enlever les spinners */
@@ -96,6 +96,16 @@
     -moz-appearance: textfield;
   }
 
+  ::selection {
+    background: var(--primary);
+    color: var(--background);
+  }
+
+  ::-moz-selection {
+    background: var(--primary);
+    color: var(--background);
+  }
+
   @media (max-width: 640px) {
     .responsive-badge {
       display: flex;
@@ -104,10 +114,6 @@
       padding: 0.5rem 1rem;
       text-align: center;
       border-radius: 9999px;
-      /* Fully rounded */
     }
   }
-
-
-
 }
